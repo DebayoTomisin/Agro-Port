@@ -1,64 +1,74 @@
-*{
-    margin: 0;
-    padding: 0;
+:root{
+    --primary-color: rgba(162, 230, 178, 0.2);
+    --menu-speed : 0.7s5;
+    --overlay-color : #0ed41e;
 }
-body{
-    overflow-x: hidden;
+
+*{
+    padding: 0;
+    margin: 0;
 }
 
 .container{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .main{
-   display: flex;
-   justify-content: center;
-   height: 100vh;
-   width: 100vw;
-   align-items: center;
-   flex-direction: column;
-   background-image: url('../images/photo-1545300329-e785e923ed45.jfif');
-   
-}
-.button{
-    
-}
-.button > a{
-    font-size: 1.4em;
-    text-decoration: none;
-    color: white;
-    border: .1em solid white;
-    padding: .5em;
-    font-weight: 700;
-    border-radius: .7em;    
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
 }
 
-.button > a:hover{
-    background: #27ae60;
-    cursor: pointer;
-}
-.text-up{
-    margin: 1em auto;
-    padding: .5em;
-    font-size: .9em;
+.showcase{
+    background-color: var(--primary-color);
+    height: 100vh;
+    position: relative;
+    color:black;
 }
 
-.info{
+.showcase:before{
+    content: "";
+    background: url('../images/photo-1545300329-e785e923ed45.jfif')no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.showcase  .showcase-inner{
     display: flex;
-    margin: .5em auto;
-    font-size: .8em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
-.text{
-    flex-direction: row;
-    padding: .5em;
-    margin: .7em
+
+.showcase h1{
+    font-size: 4rem;
+    color: wheat;
 }
-.info-one, .info-three{
-    background-color: #27ae60;
-    border-radius: .5em;
-    color: white;
+.showcase p{
+    font-size: 1.3rem;
+    color:wheat;
+}
+.btn{
+    border: none;
+    margin-top: 1rem;
+    display: inline-block;
+    background-color:  var(--overlay-color);
+    color: wheat;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity .5s ease-in;
+    border-radius: .7rem;
+}
+
+.btn:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
